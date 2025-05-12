@@ -44,11 +44,13 @@ const postUser = async (req, res) => {
     });
 
     if (result.error) {
+      console.log(result.error)
       return res.status(result.error).json(result);
     }
 
     return res.status(201).json(result);
   } catch (err) {
+    console.log(err)
     return res.status(500).json({ error: 500, message: 'Server error', details: err.message });
   }
 };
